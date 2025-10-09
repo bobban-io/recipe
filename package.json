@@ -1,6 +1,6 @@
 {
-  "name": "sourdough-app",
-  "version": "0.1.0",
+  "name": "@bobban-io/sourdough-app",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,17 +9,22 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "next": "15.5.4"
+    "@radix-ui/react-accessible-icon": "^1",
+    "@radix-ui/themes": "^3",
+    "classnames": "^2",
+    "next": "^15",
+    "normalize.css": "^8",
+    "react": "^19",
+    "react-dom": "^19",
+    "zod": "^4"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
-    "@eslint/eslintrc": "^3"
+    "eslint-config-next": "^15",
+    "typescript": "^5"
   }
 }
