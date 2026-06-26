@@ -1,10 +1,15 @@
 import { Container } from "@radix-ui/themes";
-import { PropsWithChildren } from "react";
+import { Fragment, PropsWithChildren } from "react";
+import { Header } from "~/ui/Header/Header";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
-    <Container px="4" maxWidth="640px" asChild>
-      <main>{children}</main>
-    </Container>
+    <Fragment>
+      <Header />
+
+      <Container px="4" maxWidth="640px" asChild>
+        <main>{children}</main>
+      </Container>
+    </Fragment>
   );
 }

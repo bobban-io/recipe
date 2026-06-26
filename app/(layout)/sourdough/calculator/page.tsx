@@ -4,7 +4,7 @@ import { Heading, Section } from "@radix-ui/themes";
 export default function Page() {
   return (
     <Section>
-      <Heading mb="5" size="8">
+      <Heading size="6" mb="5">
         Calculator
       </Heading>
 

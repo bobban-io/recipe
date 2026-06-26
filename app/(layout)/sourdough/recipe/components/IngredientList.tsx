@@ -26,7 +26,7 @@ export function IngredientList(props: Props) {
       <li>
         <Text>
           <span style={{ minWidth: "90px", display: "inline-block" }}>{formatGrams(ingredients.water)}</span>
-          Water
+          Cold water
         </Text>
       </li>
       <li>

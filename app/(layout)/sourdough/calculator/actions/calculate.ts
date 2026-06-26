@@ -38,6 +38,6 @@ export async function calculate(_: ActionState, formData: FormData): Promise<Act
   const salt = validation.data.saltLevel * (validation.data.flourGrams / 100);
 
   return redirect(
-    `/recipe?wheat=${wheat}&rye=${rye}&starter=${starter}&water=${water}&salt=${salt}&startDate=${validation.data.startDate}`
+    `/sourdough/recipe?wheat=${wheat}&rye=${rye}&starter=${starter}&water=${water}&salt=${salt}&startDate=${validation.data.startDate}`
   );
 }

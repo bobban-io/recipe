@@ -1,5 +1,5 @@
 {
-  "name": "@bobban-io/sourdough-app",
+  "name": "@bobban-io/bakr",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@radix-ui/react-accessible-icon": "^1",
+    "@radix-ui/react-icons": "^1",
     "@radix-ui/themes": "^3",
     "classnames": "^2",
     "next": "^15",

@@ -1,7 +1,9 @@
 import { InstructionList } from "./components/InstructionList";
 import { IngredientList } from "./components/IngredientList";
 import { recipeSchema } from "./schemas/recipeSchema";
-import { Heading, Section } from "@radix-ui/themes";
+import { Button, Flex, Heading, Section } from "@radix-ui/themes";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
 
 export async function validateSearchParams(page: PageProps<never>) {
   const searchParams = await page.searchParams;
@@ -13,9 +15,15 @@ export default async function Page(props: PageProps<never>) {
 
   return (
     <Section>
-      <Heading size="8" mb="5">
-        Recipe
-      </Heading>
+      <Flex justify="between" align="center" mb="5">
+        <Heading size="6">Recipe</Heading>
+        <Link href="/sourdough/calculator">
+          <Button variant="ghost">
+            <ArrowLeftIcon />
+            Back to calculator
+          </Button>
+        </Link>
+      </Flex>
 
       <IngredientList ingredients={params} />
 

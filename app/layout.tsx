@@ -5,8 +5,8 @@ import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 
 export const metadata: Metadata = {
-  title: "Sourdough",
-  description: "Master the sourdough experience",
+  title: "Bakr",
+  description: "Master the baking experience",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
