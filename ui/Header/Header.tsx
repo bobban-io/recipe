@@ -6,7 +6,7 @@ export function Header() {
       <Section>
         <Container px="4" maxWidth="640px">
           <Text size="8" weight="bold">
-            bakr.
+            recipe.
           </Text>
         </Container>
       </Section>

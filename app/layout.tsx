@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import "@radix-ui/themes/styles.css";
 
 export const metadata: Metadata = {
-  title: "Bakr",
+  title: "Recipe - bobban.io",
   description: "Master the baking experience",
 };
 
