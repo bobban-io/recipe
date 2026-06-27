@@ -1,0 +1,29 @@
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* Rendered markdown bodies (recipe method/steps). */
+.markdown ol,
+.markdown ul {
+  padding-left: 1.5rem;
+  margin: 0 0 var(--space-4);
+}
+
+.markdown li {
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-1);
+}
+
+.markdown li::marker {
+  color: var(--gray-9);
+}
+
+.markdown li > p {
+  margin-bottom: var(--space-2);
+}
