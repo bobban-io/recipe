@@ -7,7 +7,7 @@ ingredients:
   - { name: Fresh yeast, grams: 25 }
   - { name: Boiled potato, grams: 90, note: "finely grated, about 1 large" }
   - { name: Water, grams: 300, note: lukewarm }
-  - { name: Strong wheat flour, grams: 420, note: plus extra for shaping }
+  - { name: Strong wheat flour, grams: 480, note: plus extra for shaping }
   - { name: Salt, grams: 6 }
   - { name: Neutral oil for frying, grams: 900 }
   - { name: Garlic, grams: 20, note: about 4 large cloves }
