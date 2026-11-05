@@ -1,7 +1,7 @@
 import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { Link } from "@tanstack/react-router";
 import type { Recipe } from "~/lib/recipes";
-import { pluralizeUnit } from "~/lib/scale";
+import { yieldUnitFor } from "~/lib/scale";
 
 export function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
@@ -13,7 +13,7 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
             {recipe.description}
           </Text>
           <Badge variant="soft" radius="full" mt="1">
-            Makes {recipe.defaultYield} {pluralizeUnit(recipe.yieldUnit, recipe.defaultYield)}
+            Ger {recipe.defaultYield} {yieldUnitFor(recipe, recipe.defaultYield)}
           </Badge>
         </Flex>
       </Link>

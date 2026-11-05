@@ -5,10 +5,10 @@ export function NotFound() {
   return (
     <Section>
       <Flex direction="column" align="start" gap="4">
-        <Heading size="7">Not found</Heading>
-        <Text color="gray">We couldn&apos;t find that recipe.</Text>
+        <Heading size="7">Hittades inte</Heading>
+        <Text color="gray">Vi hittade inte det receptet.</Text>
         <Button asChild>
-          <Link to="/">Browse all recipes</Link>
+          <Link to="/">Visa alla recept</Link>
         </Button>
       </Flex>
     </Section>

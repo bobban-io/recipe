@@ -18,18 +18,25 @@ const ingredientSchema = z
     message: "Ingredient must define either `grams` or `percent`",
   });
 
-const frontmatterSchema = z.object({
-  title: z.string(),
-  description: z.string(),
-  /** The unit the recipe is measured in, e.g. "loaf" or "portion". */
-  yieldUnit: z.string(),
-  /** How many `yieldUnit`s the listed amounts produce. */
-  defaultYield: z.number().positive().default(1),
-  ingredients: z.array(ingredientSchema).min(1),
-});
+const frontmatterSchema = z
+  .object({
+    title: z.string(),
+    description: z.string(),
+    /** The unit the recipe is measured in, e.g. "limpa" or "portion". */
+    yieldUnit: z.string(),
+    /** Plural of `yieldUnit`, e.g. "limpor". Omit when it doesn't change ("muffins"). */
+    yieldUnitPlural: z.string().optional(),
+    /** How many `yieldUnit`s the listed amounts produce. */
+    defaultYield: z.number().positive().default(1),
+    ingredients: z.array(ingredientSchema).min(1),
+  })
+  .transform((frontmatter) => ({
+    ...frontmatter,
+    yieldUnitPlural: frontmatter.yieldUnitPlural ?? frontmatter.yieldUnit,
+  }));
 
 export type Ingredient = z.infer<typeof ingredientSchema>;
-export type RecipeFrontmatter = z.infer<typeof frontmatterSchema>;
+export type RecipeFrontmatter = z.output<typeof frontmatterSchema>;
 export type Recipe = RecipeFrontmatter & { slug: string; body: string };
 
 const FRONTMATTER_RE = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
@@ -60,7 +67,7 @@ const recipes: Recipe[] = Object.entries(modules)
     const slug = path.split("/").pop()!.replace(/\.md$/, "");
     return parseRecipe(slug, raw);
   })
-  .sort((a, b) => a.title.localeCompare(b.title));
+  .sort((a, b) => a.title.localeCompare(b.title, "sv"));
 
 export function getAllRecipes(): Recipe[] {
   return recipes;

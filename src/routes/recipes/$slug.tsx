@@ -30,7 +30,7 @@ function RecipePage() {
         <Button asChild variant="ghost">
           <Link to="/">
             <ArrowLeftIcon />
-            All recipes
+            Alla recept
           </Link>
         </Button>
       </Flex>
@@ -39,10 +39,10 @@ function RecipePage() {
         {recipe.description}
       </Text>
 
-      <YieldSelector unit={recipe.yieldUnit} value={yieldCount} onChange={(n) => setYieldCount(Math.max(1, n))} />
+      <YieldSelector unitPlural={recipe.yieldUnitPlural} value={yieldCount} onChange={(n) => setYieldCount(Math.max(1, n))} />
 
       <Heading size="5" mt="7" mb="4">
-        Ingredients
+        Ingredienser
       </Heading>
       <IngredientList ingredients={ingredients} />
 

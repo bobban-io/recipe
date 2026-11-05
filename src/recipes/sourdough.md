@@ -1,50 +1,51 @@
 ---
-title: Sourdough Bread
-description: A naturally leavened loaf with a crackly crust and an open, tender crumb.
-yieldUnit: loaf
+title: Surdegsbröd
+description: Ett surdegsbröd med krispig skorpa och luftig, mjuk inkråm.
+yieldUnit: limpa
+yieldUnitPlural: limpor
 defaultYield: 1
 ingredients:
-  - { name: Wheat flour, grams: 500, flour: true }
-  - { name: Rye flour, grams: 50, flour: true }
-  - { name: Water, percent: 70, note: cold }
-  - { name: Starter, percent: 20 }
+  - { name: Vetemjöl, grams: 500, flour: true }
+  - { name: Rågmjöl, grams: 50, flour: true }
+  - { name: Vatten, percent: 70, note: kallt }
+  - { name: Surdegsgrund, percent: 20 }
   - { name: Salt, percent: 2 }
 ---
 
-## Method
+## Gör så här
 
-1. **Feed your starter** — about 5 hours before you plan to mix. Feed it so it can
-   double in size and turn bubbly and slightly domed on top by mixing time. Measure
-   out the water now too, and let it sit at room temperature so it isn't too cold when
-   you mix.
+1. **Mata surdegen** – ca 5 timmar innan du ska blanda degen. Mata den så att den
+   hinner dubblas och är bubblig och lite välvd på toppen när det är dags. Mät upp
+   vattnet nu också och låt det stå framme i rumstemperatur, så att det inte är för
+   kallt när du blandar.
 
-2. **Mix water, starter and flour.** Combine the water, starter and both flours. You
-   don't need to knead aggressively — just make sure everything is evenly mixed with no
-   dry spots. Cover and let it rest.
+2. **Blanda vatten, surdeg och mjöl.** Blanda vattnet, surdegen och båda mjölsorterna.
+   Du behöver inte knåda hårt – se bara till att allt är jämnt blandat och att det inte
+   finns några torra fläckar. Täck över och låt vila.
 
-3. **Add the salt** — roughly 30 minutes after mixing. Sprinkle it in and gently work
-   it into the dough by squeezing and folding.
+3. **Tillsätt saltet** – ca 30 minuter efter att du blandat degen. Strö över saltet och
+   arbeta in det försiktigt genom att klämma och vika degen.
 
-4. **Begin folding the dough** — about 30 minutes after adding the salt. Perform a
-   series of folds every 30 minutes for about 2 hours (4 sets total). Each time, start
-   at one side, grab the dough, stretch it upward, and fold it over itself. Rotate the
-   bowl and repeat on all sides. After the last fold, let the dough rest undisturbed
-   until preshape time.
+4. **Börja vika degen** – ca 30 minuter efter att du tillsatt saltet. Vik degen var
+   30:e minut i ungefär 2 timmar (4 omgångar totalt). Varje gång: börja på ena sidan, ta
+   tag i degen, dra den uppåt och vik den över sig själv. Vrid bunken och gör likadant
+   runt om. Efter sista vikningen får degen vila orörd tills det är dags att förforma.
 
-5. **Preshape** — a few hours later, once the dough has visibly risen and feels airy.
-   Turn it out onto a clean, dry (non-floured) surface. Preshape using your hands or a
-   bench scraper, building surface tension into a smooth, tight round. See
-   [this video](https://www.youtube.com/shorts/l5GdlI-Vf_Q) if needed, then let it rest.
+5. **Förforma** – några timmar senare, när degen har jäst synligt och känns luftig.
+   Stjälp upp den på en ren, torr bänk (utan mjöl). Förforma med händerna eller en
+   degskrapa och bygg upp ytspänning tills du har en slät, spänd boll. Kolla
+   [den här videon](https://www.youtube.com/shorts/l5GdlI-Vf_Q) om du behöver, och låt
+   sedan degen vila.
 
-6. **Shape and refrigerate** — about 30 minutes after preshaping. Lightly flour the top
-   of the dough, then flip it upside down. Stretch it gently into a rectangle and fold
-   it like an envelope. Cross-fold the sides, then roll it up tightly. See
-   [this video](https://www.youtube.com/shorts/j4a1knyyaZk) if you're unsure about the
-   technique. Place the dough seam-side up in a floured proofing basket, then
-   refrigerate overnight.
+6. **Forma och ställ in i kylen** – ca 30 minuter efter förformningen. Pudra lite mjöl
+   på ovansidan av degen och vänd den upp och ner. Dra försiktigt ut den till en
+   rektangel och vik den som ett kuvert. Vik in sidorna mot mitten och rulla sedan ihop
+   den hårt. Kolla [den här videon](https://www.youtube.com/shorts/j4a1knyyaZk) om du är
+   osäker på tekniken. Lägg degen med skarven uppåt i en mjölad jäskorg och ställ in den
+   i kylen över natten.
 
-7. **Bake the next day.** Preheat your oven to 230 °C (top and bottom heat). Score the
-   dough and bake for about 20 minutes with steam, then another 20 minutes without
-   steam, until the crust is golden brown and the internal temperature reaches around
-   96 °C. If your oven doesn't have a steam function, add a small tray of water or a few
-   ice cubes on the bottom shelf during the first 20 minutes.
+7. **Grädda dagen efter.** Sätt ugnen på 230 °C (över- och undervärme). Snitta degen och
+   grädda i ca 20 minuter med ånga och sedan 20 minuter till utan ånga, tills skorpan är
+   gyllenbrun och kärntemperaturen ligger runt 96 °C. Har din ugn ingen ångfunktion kan
+   du ställa in en liten form med vatten eller några isbitar på nedersta falsen under de
+   första 20 minuterna.

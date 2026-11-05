@@ -19,11 +19,12 @@ Scripts: `bun run dev`, `bun run build`, `bun run preview`, `bun run typecheck`,
 
 ## Recipes
 
-Recipes are plain markdown files in `src/recipes/`. **To add one, drop a new `.md` file there** —
+Recipes are plain markdown files in `src/recipes/`, written in casual Swedish (the UI is Swedish too). **To add one, drop a new `.md` file there** —
 it is picked up automatically (the home page and prerendering discover it). Structure:
 
 - **YAML frontmatter** holds the scalable data: `title`, `description`, `yieldUnit`
-  (e.g. `loaf` or `portion`), `defaultYield`, and `ingredients`.
+  (e.g. `limpa` or `portion`), `yieldUnitPlural` (e.g. `limpor`; omit when the plural is
+  the same, like `muffins`), `defaultYield`, and `ingredients`.
 - Each ingredient is either an absolute amount (`grams`) or a baker's percentage
   (`percent`, relative to the total weight of ingredients flagged `flour: true`).
   Optional `note` shows after the name.

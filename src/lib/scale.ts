@@ -1,4 +1,4 @@
-import type { Ingredient } from "~/lib/recipes";
+import type { Ingredient, Recipe } from "~/lib/recipes";
 
 export type ScaledIngredient = { name: string; grams: number; note?: string };
 
@@ -36,9 +36,7 @@ export function scaleIngredients(
   }));
 }
 
-/** Pluralise a yield unit for display ("loaf" → "loaves", "portion" → "portions"). */
-export function pluralizeUnit(unit: string, count: number): string {
-  if (count === 1) return unit;
-  if (unit.endsWith("f")) return `${unit.slice(0, -1)}ves`;
-  return `${unit}s`;
+/** The yield unit to show for a count ("1 limpa", "2 limpor"). */
+export function yieldUnitFor(recipe: Pick<Recipe, "yieldUnit" | "yieldUnitPlural">, count: number): string {
+  return count === 1 ? recipe.yieldUnit : recipe.yieldUnitPlural;
 }

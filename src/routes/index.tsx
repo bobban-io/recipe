@@ -13,8 +13,8 @@ function Home() {
   return (
     <Section>
       <Flex direction="column" gap="2" mb="6">
-        <Heading size="7">Recipes</Heading>
-        <Text color="gray">Pick a recipe, choose how much you want to make, and the amounts scale automatically.</Text>
+        <Heading size="7">Recept</Heading>
+        <Text color="gray">Välj ett recept och hur mycket du vill göra, så räknas mängderna om automatiskt.</Text>
       </Flex>
 
       <Grid columns={{ initial: "1", sm: "2" }} gap="4">

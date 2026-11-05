@@ -12,8 +12,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Recipe - bobban.io" },
-      { name: "description", content: "Master the baking experience" },
+      { title: "Recept - bobban.io" },
+      { name: "description", content: "Bli en mästare på att baka" },
     ],
   }),
   component: RootComponent,
@@ -37,7 +37,7 @@ function RootComponent() {
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="sv">
       <head>
         <HeadContent />
       </head>

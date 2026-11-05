@@ -6,8 +6,8 @@ export function IngredientList({ ingredients }: { ingredients: ScaledIngredient[
   return (
     <Flex direction="column" gap="2" asChild>
       <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-        {ingredients.map((ingredient) => (
-          <li key={ingredient.name}>
+        {ingredients.map((ingredient, index) => (
+          <li key={`${ingredient.name}-${index}`}>
             <Text>
               <Text as="span" weight="bold" style={{ minWidth: "90px", display: "inline-block" }}>
                 {formatGrams(ingredient.grams)}
