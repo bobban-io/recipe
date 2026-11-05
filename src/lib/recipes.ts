@@ -1,22 +1,32 @@
 import yaml from "js-yaml";
 import { z } from "zod";
 
+/** Kitchen units for ingredients that aren't weighed. */
+export const UNITS = ["st", "dl", "msk", "tsk", "krm"] as const;
+export type Unit = (typeof UNITS)[number];
+
 /**
- * An ingredient is either an absolute amount (`grams`) or a baker's percentage
- * (`percent`) relative to the total flour weight. Flours are flagged so they can
- * form the percentage base.
+ * An ingredient is measured in exactly one way: a weight (`grams`), a baker's
+ * percentage (`percent`) of the total flour weight, or an `amount` of a kitchen
+ * `unit` (e.g. 4 st, 3 dl). Flours are flagged so they can form the percentage base.
  */
 const ingredientSchema = z
   .object({
     name: z.string(),
     grams: z.number().optional(),
     percent: z.number().optional(),
+    amount: z.number().positive().optional(),
+    unit: z.enum(UNITS).optional(),
     flour: z.boolean().optional(),
     note: z.string().optional(),
   })
-  .refine((ingredient) => ingredient.grams != null || ingredient.percent != null, {
-    message: "Ingredient must define either `grams` or `percent`",
-  });
+  .refine((ingredient) => (ingredient.amount == null) === (ingredient.unit == null), {
+    message: "`amount` and `unit` must be given together",
+  })
+  .refine(
+    (ingredient) => [ingredient.grams, ingredient.percent, ingredient.amount].filter((v) => v != null).length === 1,
+    { message: "Ingredient must define exactly one of `grams`, `percent` or `amount` + `unit`" },
+  );
 
 const frontmatterSchema = z
   .object({

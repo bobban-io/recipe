@@ -5,16 +5,16 @@ yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 6
 ingredients:
-  - { name: Kycklingbröstfilé, grams: 1000, note: "skuren i munsbitar" }
-  - { name: Grekisk yoghurt, grams: 150, note: "10 %, ca 1½ dl" }
-  - { name: Citron, grams: 40, note: "saften från ca 1 citron" }
-  - { name: Vitlök, grams: 12, note: "ca 3 klyftor, rivna" }
-  - { name: Neutral olja, grams: 60, note: "ca 4 msk, till marinaden" }
-  - { name: Torkad oregano, grams: 4, note: "ca 1½ msk, till marinaden" }
-  - { name: Paprikapulver, grams: 3, note: "ca 1½ tsk" }
-  - { name: Salt, grams: 9, note: "ca 1½ tsk" }
-  - { name: Svartpeppar, grams: 2, note: "ca ¾ tsk" }
-  - { name: Fryst pommes frites, grams: 1000, note: "en påse på 1 kg" }
+  - { name: Kycklingbröstfilé, grams: 1000, note: skuren i munsbitar }
+  - { name: Grekisk yoghurt, amount: 1.5, unit: dl, note: 10 % }
+  - { name: Citron, amount: 1, unit: st, note: saften }
+  - { name: Vitlöksklyftor, amount: 3, unit: st, note: rivna }
+  - { name: Neutral olja, amount: 4, unit: msk, note: till marinaden }
+  - { name: Torkad oregano, amount: 1.5, unit: msk, note: till marinaden }
+  - { name: Paprikapulver, amount: 1.5, unit: tsk }
+  - { name: Salt, amount: 1.5, unit: tsk }
+  - { name: Svartpeppar, amount: 0.75, unit: tsk }
+  - { name: Fryst pommes frites, grams: 1000 }
   - { name: Extra jungfru olivolja, grams: 25, note: "att ringla över pommesen" }
   - { name: Torkad oregano, grams: 2, note: "till pommesen, efter smak" }
   - { name: Olja, grams: 25, note: "till att steka spetten" }

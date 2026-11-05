@@ -1,5 +1,5 @@
 import { Flex, Text } from "@radix-ui/themes";
-import { formatGrams } from "~/utils/formatGrams";
+import { formatAmount } from "~/utils/formatAmount";
 import type { ScaledIngredient } from "~/lib/scale";
 
 export function IngredientList({ ingredients }: { ingredients: ScaledIngredient[] }) {
@@ -10,7 +10,7 @@ export function IngredientList({ ingredients }: { ingredients: ScaledIngredient[
           <li key={`${ingredient.name}-${index}`}>
             <Text>
               <Text as="span" weight="bold" style={{ minWidth: "90px", display: "inline-block" }}>
-                {formatGrams(ingredient.grams)}
+                {formatAmount(ingredient)}
               </Text>
               {ingredient.name}
               {ingredient.note ? (

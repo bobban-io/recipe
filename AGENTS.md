@@ -25,9 +25,13 @@ it is picked up automatically (the home page and prerendering discover it). Stru
 - **YAML frontmatter** holds the scalable data: `title`, `description`, `yieldUnit`
   (e.g. `limpa` or `portion`), `yieldUnitPlural` (e.g. `limpor`; omit when the plural is
   the same, like `muffins`), `defaultYield`, and `ingredients`.
-- Each ingredient is either an absolute amount (`grams`) or a baker's percentage
-  (`percent`, relative to the total weight of ingredients flagged `flour: true`).
-  Optional `note` shows after the name.
+- Each ingredient is measured in exactly one way: a weight (`grams`), a baker's
+  percentage (`percent`, relative to the total weight of ingredients flagged
+  `flour: true`), or an `amount` + `unit` (`st`, `dl`, `msk`, `tsk`, `krm`; shown
+  rounded to quarters, e.g. `1½ dl`). Prefer the unit you'd naturally measure with —
+  eggs in `st`, not grams.
+- Optional `note` shows after the name. It doesn't scale, so keep quantities out of it
+  (`till glasyren`, not `ca 4 dl`).
 - The **markdown body** is the free-form method/steps, rendered with `react-markdown`.
 
 Amounts scale linearly with the chosen yield. Parsing/scaling lives in

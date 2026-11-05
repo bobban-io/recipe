@@ -5,14 +5,14 @@ yieldUnit: lángos
 defaultYield: 8
 ingredients:
   - { name: Färsk jäst, grams: 25 }
-  - { name: Kokt potatis, grams: 90, note: "finriven, ca 1 stor" }
+  - { name: Kokt potatis, grams: 90, note: finriven }
   - { name: Vatten, grams: 300, note: ljummet }
   - { name: Vetemjöl special, grams: 480, note: plus extra till utbakningen }
   - { name: Salt, grams: 6 }
   - { name: Neutral olja till fritering, grams: 900 }
-  - { name: Vitlök, grams: 20, note: ca 4 stora klyftor }
+  - { name: Vitlöksklyftor, amount: 4, unit: st, note: stora }
   - { name: Neutral olja, grams: 90, note: till vitlöksoljan }
-  - { name: Rödlök, grams: 110, note: ca 1 st }
+  - { name: Rödlök, amount: 1, unit: st }
   - { name: Gräddfil, grams: 300 }
   - { name: Svart stenbitsrom, grams: 100 }
   - { name: Färsk dill, grams: 5, note: "plockad, till garnering" }

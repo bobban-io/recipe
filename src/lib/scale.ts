@@ -1,6 +1,6 @@
-import type { Ingredient, Recipe } from "~/lib/recipes";
+import type { Ingredient, Recipe, Unit } from "~/lib/recipes";
 
-export type ScaledIngredient = { name: string; grams: number; note?: string };
+export type ScaledIngredient = { name: string; amount: number; unit: "g" | Unit; note?: string };
 
 /** Sum of the absolute gram weights of every ingredient flagged as flour. */
 export function totalFlourGrams(ingredients: Ingredient[]): number {
@@ -21,6 +21,35 @@ export function roundGrams(value: number): number {
   return value < 10 ? Math.round(value * 10) / 10 : Math.round(value);
 }
 
+/** Round kitchen-unit amounts to the nearest quarter (at least ¼), so they read like "1½ dl". */
+export function roundToQuarter(value: number): number {
+  return Math.max(0.25, Math.round(value * 4) / 4);
+}
+
+/** Volume units in millilitres, largest first. */
+const VOLUME_ML: [Unit, number][] = [
+  ["dl", 100],
+  ["msk", 15],
+  ["tsk", 5],
+  ["krm", 1],
+];
+
+/**
+ * Scale a kitchen-unit amount. Volumes that would drop below ¼ step down to a
+ * smaller measure instead of being rounded up (1/12 of 1 dl → ½ msk, not ¼ dl).
+ */
+function scaleUnitAmount(amount: number, unit: Unit, factor: number): { amount: number; unit: Unit } {
+  let value = amount * factor;
+  let index = VOLUME_ML.findIndex(([volumeUnit]) => volumeUnit === unit);
+  if (index === -1) return { amount: roundToQuarter(value), unit };
+
+  while (value < 0.25 && index < VOLUME_ML.length - 1) {
+    value = (value * VOLUME_ML[index][1]) / VOLUME_ML[index + 1][1];
+    index += 1;
+  }
+  return { amount: roundToQuarter(value), unit: VOLUME_ML[index][0] };
+}
+
 export function scaleIngredients(
   ingredients: Ingredient[],
   defaultYield: number,
@@ -29,11 +58,13 @@ export function scaleIngredients(
   const totalFlour = totalFlourGrams(ingredients);
   const factor = chosenYield / defaultYield;
 
-  return ingredients.map((ingredient) => ({
-    name: ingredient.name,
-    note: ingredient.note,
-    grams: roundGrams(baseGrams(ingredient, totalFlour) * factor),
-  }));
+  return ingredients.map((ingredient): ScaledIngredient => {
+    const { name, note } = ingredient;
+    if (ingredient.amount != null && ingredient.unit != null) {
+      return { name, note, ...scaleUnitAmount(ingredient.amount, ingredient.unit, factor) };
+    }
+    return { name, note, unit: "g", amount: roundGrams(baseGrams(ingredient, totalFlour) * factor) };
+  });
 }
 
 /** The yield unit to show for a count ("1 limpa", "2 limpor"). */

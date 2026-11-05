@@ -4,19 +4,19 @@ description: Kladdiga chokladmuffins med kaffedoftande chokladglasyr och kokos �
 yieldUnit: muffins
 defaultYield: 12
 ingredients:
-  - { name: Smör, grams: 200, note: "till smeten" }
-  - { name: Ägg, grams: 220, note: "4 st" }
-  - { name: Strösocker, grams: 340, note: "ca 4 dl" }
-  - { name: Vetemjöl, grams: 180, note: "ca 3 dl" }
-  - { name: Kakao, grams: 40, note: "ca 1 dl, till smeten" }
-  - { name: Vaniljsocker, grams: 20, note: "ca 2 msk, till smeten" }
-  - { name: Salt, grams: 0.6, note: "ca ½ krm" }
-  - { name: Smör, grams: 100, note: "till glasyren" }
-  - { name: Florsocker, grams: 300, note: "ca 5 dl" }
-  - { name: Kakao, grams: 24, note: "ca 4 msk, till glasyren" }
-  - { name: Kokt kaffe, grams: 60, note: "ca 4 msk" }
-  - { name: Vaniljsocker, grams: 10, note: "ca 1 msk, till glasyren" }
-  - { name: Riven kokos, grams: 35, note: "ca 1 dl, att toppa med" }
+  - { name: Smör, grams: 200, note: till smeten }
+  - { name: Ägg, amount: 4, unit: st }
+  - { name: Strösocker, amount: 4, unit: dl }
+  - { name: Vetemjöl, amount: 3, unit: dl }
+  - { name: Kakao, amount: 1, unit: dl, note: till smeten }
+  - { name: Vaniljsocker, amount: 2, unit: msk, note: till smeten }
+  - { name: Salt, amount: 0.5, unit: krm }
+  - { name: Smör, grams: 100, note: till glasyren }
+  - { name: Florsocker, amount: 5, unit: dl }
+  - { name: Kakao, amount: 4, unit: msk, note: till glasyren }
+  - { name: Kokt kaffe, amount: 4, unit: msk }
+  - { name: Vaniljsocker, amount: 1, unit: msk, note: till glasyren }
+  - { name: Riven kokos, amount: 1, unit: dl, note: att toppa med }
 ---
 
 ## Gör så här
