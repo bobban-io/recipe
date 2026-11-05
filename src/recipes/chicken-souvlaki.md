@@ -1,5 +1,5 @@
 ---
-title: Kycklingsouvlaki med oregano, pommes och tzatziki
+title: Kycklingsouvlaki
 description: Klassiska grekiska kycklingspett marinerade i citron, yoghurt och oregano – med gyllene pommes, fetaost och tzatziki.
 yieldUnit: portion
 yieldUnitPlural: portioner
