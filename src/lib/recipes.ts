@@ -28,6 +28,24 @@ const ingredientSchema = z
     { message: "Ingredient must define exactly one of `grams`, `percent` or `amount` + `unit`" },
   );
 
+export type Ingredient = z.infer<typeof ingredientSchema>;
+/** A group of ingredients; `title` is shown as "Ingredienser (smet)". */
+export type IngredientSection = { title?: string; ingredients: Ingredient[] };
+
+/** A flat list (one untitled section) or named sections: `- { section: smet, items: [...] }`. */
+const ingredientsSchema = z.union([
+  z
+    .array(ingredientSchema)
+    .min(1)
+    .transform((ingredients): IngredientSection[] => [{ ingredients }]),
+  z
+    .array(z.object({ section: z.string(), items: z.array(ingredientSchema).min(1) }))
+    .min(1)
+    .transform((sections): IngredientSection[] =>
+      sections.map(({ section, items }) => ({ title: section, ingredients: items })),
+    ),
+]);
+
 const frontmatterSchema = z
   .object({
     title: z.string(),
@@ -38,14 +56,14 @@ const frontmatterSchema = z
     yieldUnitPlural: z.string().optional(),
     /** How many `yieldUnit`s the listed amounts produce. */
     defaultYield: z.number().positive().default(1),
-    ingredients: z.array(ingredientSchema).min(1),
+    ingredients: ingredientsSchema,
   })
-  .transform((frontmatter) => ({
+  .transform(({ ingredients, ...frontmatter }) => ({
     ...frontmatter,
     yieldUnitPlural: frontmatter.yieldUnitPlural ?? frontmatter.yieldUnit,
+    ingredientSections: ingredients,
   }));
 
-export type Ingredient = z.infer<typeof ingredientSchema>;
 export type RecipeFrontmatter = z.output<typeof frontmatterSchema>;
 export type Recipe = RecipeFrontmatter & { slug: string; body: string };
 

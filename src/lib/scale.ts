@@ -1,6 +1,7 @@
-import type { Ingredient, Recipe, Unit } from "~/lib/recipes";
+import type { Ingredient, IngredientSection, Recipe, Unit } from "~/lib/recipes";
 
 export type ScaledIngredient = { name: string; amount: number; unit: "g" | Unit; note?: string };
+export type ScaledSection = { title?: string; ingredients: ScaledIngredient[] };
 
 /** Sum of the absolute gram weights of every ingredient flagged as flour. */
 export function totalFlourGrams(ingredients: Ingredient[]): number {
@@ -50,21 +51,27 @@ function scaleUnitAmount(amount: number, unit: Unit, factor: number): { amount: 
   return { amount: roundToQuarter(value), unit: VOLUME_ML[index][0] };
 }
 
-export function scaleIngredients(
-  ingredients: Ingredient[],
+function scaleIngredient(ingredient: Ingredient, totalFlour: number, factor: number): ScaledIngredient {
+  const { name, note } = ingredient;
+  if (ingredient.amount != null && ingredient.unit != null) {
+    return { name, note, ...scaleUnitAmount(ingredient.amount, ingredient.unit, factor) };
+  }
+  return { name, note, unit: "g", amount: roundGrams(baseGrams(ingredient, totalFlour) * factor) };
+}
+
+/** Scale every section; baker's percentages use the flour from all sections combined. */
+export function scaleSections(
+  sections: IngredientSection[],
   defaultYield: number,
   chosenYield: number,
-): ScaledIngredient[] {
-  const totalFlour = totalFlourGrams(ingredients);
+): ScaledSection[] {
+  const totalFlour = totalFlourGrams(sections.flatMap((section) => section.ingredients));
   const factor = chosenYield / defaultYield;
 
-  return ingredients.map((ingredient): ScaledIngredient => {
-    const { name, note } = ingredient;
-    if (ingredient.amount != null && ingredient.unit != null) {
-      return { name, note, ...scaleUnitAmount(ingredient.amount, ingredient.unit, factor) };
-    }
-    return { name, note, unit: "g", amount: roundGrams(baseGrams(ingredient, totalFlour) * factor) };
-  });
+  return sections.map(({ title, ingredients }) => ({
+    title,
+    ingredients: ingredients.map((ingredient) => scaleIngredient(ingredient, totalFlour, factor)),
+  }));
 }
 
 /** The yield unit to show for a count ("1 limpa", "2 limpor"). */

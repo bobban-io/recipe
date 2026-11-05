@@ -30,8 +30,10 @@ it is picked up automatically (the home page and prerendering discover it). Stru
   `flour: true`), or an `amount` + `unit` (`st`, `dl`, `msk`, `tsk`, `krm`; shown
   rounded to quarters, e.g. `1½ dl`). Prefer the unit you'd naturally measure with —
   eggs in `st`, not grams.
+- `ingredients` is either a flat list, or named sections when a recipe has distinct
+  parts — `- { section: smet, items: [...] }` renders as "Ingredienser (smet)".
 - Optional `note` shows after the name. It doesn't scale, so keep quantities out of it
-  (`till glasyren`, not `ca 4 dl`).
+  (`rivna`, not `ca 4 dl`).
 - The **markdown body** is the free-form method/steps, rendered with `react-markdown`.
 
 Amounts scale linearly with the chosen yield. Parsing/scaling lives in

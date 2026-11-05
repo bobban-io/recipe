@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Button, Flex, Heading, Section, Separator, Text } from "@radix-ui/themes";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
 import { getRecipe } from "~/lib/recipes";
-import { scaleIngredients } from "~/lib/scale";
+import { scaleSections } from "~/lib/scale";
 import { IngredientList } from "~/ui/IngredientList";
 import { YieldSelector } from "~/ui/YieldSelector";
 import { Markdown } from "~/ui/Markdown";
@@ -21,7 +21,7 @@ function RecipePage() {
   const recipe = Route.useLoaderData();
   const [yieldCount, setYieldCount] = useState(recipe.defaultYield);
 
-  const ingredients = scaleIngredients(recipe.ingredients, recipe.defaultYield, yieldCount);
+  const sections = scaleSections(recipe.ingredientSections, recipe.defaultYield, yieldCount);
 
   return (
     <Section>
@@ -41,10 +41,14 @@ function RecipePage() {
 
       <YieldSelector unitPlural={recipe.yieldUnitPlural} value={yieldCount} onChange={(n) => setYieldCount(Math.max(1, n))} />
 
-      <Heading size="5" mt="7" mb="4">
-        Ingredienser
-      </Heading>
-      <IngredientList ingredients={ingredients} />
+      {sections.map((section, index) => (
+        <Fragment key={section.title ?? index}>
+          <Heading size="5" mt={index === 0 ? "7" : "6"} mb="4">
+            {section.title ? `Ingredienser (${section.title})` : "Ingredienser"}
+          </Heading>
+          <IngredientList ingredients={section.ingredients} />
+        </Fragment>
+      ))}
 
       <Separator my="7" size="4" />
 
