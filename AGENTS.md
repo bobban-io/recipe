@@ -12,6 +12,9 @@ When you're uncertain, or the scope is unclear - ask questions, don't guess.
 - **TanStack Start** (React) built with **Vite**, statically prerendered (SSG) — no server runtime.
 - **Radix UI Themes** (dark) for UI, plus a little CSS in `src/styles.css`.
 - File-based routing in `src/routes` (`__root.tsx`, `index.tsx`, `recipes/$slug.tsx`).
+- The home page keeps the chosen category chip in `src/ui/homeState.ts`, a module-level store
+  read with `useHomeState` (`useSyncExternalStore`). It survives opening a recipe and going back,
+  and a reload resets it. Keep it out of the URL and localStorage.
 - Deployed to **GitHub Pages** at `recipe.bobban.io` via `.github/workflows/deploy.yml`
   (build output is `dist/client`; `public/CNAME` + `public/.nojekyll` ship with it).
 
@@ -58,6 +61,10 @@ data as arguments, so `bun test` runs them without Vite:
   ingredient at its default yield, without staples.
 - `checks.ts` runs the build checks (`checkRecipes`) and loads checked recipes (`loadRecipes`).
 - `scale.ts` scales amounts to the chosen yield.
+- `categories.ts` holds the category filter's chips, in order: Alla, Vardagsmat, Helgmat, Bröd,
+  Bakverk and Efterrätter. Vardagsmat and Helgmat are huvudrätter with that occasion. `passesFilter`
+  turns a chip into a predicate for `recipes.filter`, `filtersToShow` gives the chips some recipe
+  passes, and `categoryWord` gives the singular word a card shows ("Efterrätt").
 
 Keep `import.meta.glob` and `?raw` in the loader. All of `src/lib` must stay browser-safe,
 since it runs during prerender and client-side navigation.
