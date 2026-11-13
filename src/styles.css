@@ -27,3 +27,114 @@ body {
 .markdown li > p {
   margin-bottom: var(--space-2);
 }
+
+/* The full-width switch under the home page's heading. Its labels only need room to fit on a
+   320px phone; the columns share the width anyway. */
+.home-tabs .rt-SegmentedControlItemLabel {
+  padding-inline: var(--space-2);
+}
+
+/* Ingredient finder: the picker's options, under its field. */
+.picker-popup {
+  position: absolute;
+  top: calc(100% + var(--space-1));
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding: var(--space-1);
+  background: var(--color-panel-solid);
+  border: 1px solid var(--gray-a6);
+  border-radius: var(--radius-4);
+  box-shadow: var(--shadow-5);
+}
+
+.picker-popup ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.picker-popup li {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-3);
+  cursor: pointer;
+}
+
+.picker-popup li[aria-selected="true"] {
+  background: var(--accent-a4);
+}
+
+.picker-popup p {
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+}
+
+/* The on-hand rows: name, amount field, remove button. */
+.on-hand-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.on-hand-rows li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--gray-a4);
+}
+
+.on-hand-name {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.on-hand-amount {
+  flex: 0 0 7.5rem;
+}
+
+.buy-list-toggle svg {
+  transition: transform 150ms ease;
+}
+
+.buy-list-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+/* The buy list as a shopping slip, its top edge perforated like one torn off a pad. */
+.buy-slip {
+  --notch: 5px;
+  margin-top: var(--space-3);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background: var(--gray-a3);
+  border-radius: 0 0 var(--radius-3) var(--radius-3);
+  mask: radial-gradient(var(--notch) at 50% 0, #0000 98%, #000) 50% 0 / calc(3 * var(--notch)) 100% repeat-x;
+}
+
+.buy-slip ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.buy-slip li {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.buy-slip-amount {
+  flex: 0 0 5.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buy-list-toggle svg {
+    transition: none;
+  }
+}

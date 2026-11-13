@@ -1,7 +1,7 @@
 import type { Recipe } from "~/lib/recipe";
 
 /** Lowercase and drop diacritics, so "langos" finds "Lángos" and "creme" finds "Crème". */
-function normalize(text: string): string {
+export function normalize(text: string): string {
   return text
     .normalize("NFD")
     .replace(/\p{Diacritic}/gu, "")

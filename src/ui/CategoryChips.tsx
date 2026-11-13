@@ -7,13 +7,14 @@ type Props = {
   filters: readonly CategoryFilter[];
   value: CategoryFilter;
   onChange: (next: CategoryFilter) => void;
+  mt?: ComponentProps<typeof Flex>["mt"];
   mb?: ComponentProps<typeof Flex>["mb"];
 };
 
 /** Single-choice category chips. */
-export function CategoryChips({ filters, value, onChange, mb }: Props) {
+export function CategoryChips({ filters, value, onChange, mt, mb }: Props) {
   return (
-    <Flex role="group" aria-label="Kategori" gap="2" wrap="wrap" mb={mb}>
+    <Flex role="group" aria-label="Kategori" gap="2" wrap="wrap" mt={mt} mb={mb}>
       {filters.map((filter) => {
         const chosen = filter === value;
         return (
