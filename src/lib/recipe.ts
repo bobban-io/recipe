@@ -85,7 +85,9 @@ const frontmatterSchema = z
   }));
 
 export type RecipeFrontmatter = z.output<typeof frontmatterSchema>;
-export type RecipeCategories = { dishType: DishType; occasion?: Occasion };
+/** A huvudrätt has an occasion, and nothing else does. */
+export type RecipeCategories =
+  { dishType: "huvudrätt"; occasion: Occasion } | { dishType: Exclude<DishType, "huvudrätt">; occasion?: undefined };
 export type Recipe = RecipeFrontmatter & RecipeCategories & { slug: string; body: string };
 
 /** Every ingredient line of a recipe, across its sections. */

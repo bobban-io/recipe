@@ -2,6 +2,7 @@ import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { Link } from "@tanstack/react-router";
 import type { Recipe } from "~/lib/recipe";
 import { yieldUnitFor } from "~/lib/scale";
+import { CategoryBadge } from "~/ui/CategoryBadge";
 
 export function RecipeCard({ recipe }: { recipe: Recipe }) {
   return (
@@ -12,9 +13,12 @@ export function RecipeCard({ recipe }: { recipe: Recipe }) {
           <Text size="2" color="gray">
             {recipe.description}
           </Text>
-          <Badge variant="soft" radius="full" mt="1">
-            Ger {recipe.defaultYield} {yieldUnitFor(recipe, recipe.defaultYield)}
-          </Badge>
+          <Flex gap="2" wrap="wrap" mt="1">
+            <Badge variant="soft" radius="full">
+              Ger {recipe.defaultYield} {yieldUnitFor(recipe, recipe.defaultYield)}
+            </Badge>
+            <CategoryBadge recipe={recipe} />
+          </Flex>
         </Flex>
       </Link>
     </Card>
