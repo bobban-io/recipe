@@ -1,0 +1,82 @@
+# The ingredient catalog: every ingredient line's name in src/recipes/*.md is an ingredient
+# here or one of its aliases. One line per ingredient, in Swedish alphabetical order.
+# See "Ingredient catalog" in AGENTS.md.
+Basilikablad: { unit: st }
+Burrata: { unit: st }
+Chilisås: { unit: dl }
+Citron: { unit: st }
+Collorit: { unit: dl }
+Crème fraiche: { unit: dl }
+Fetaost: { unit: g }
+Fisksås: { unit: dl }
+Florsocker: { unit: dl }
+Flytande honung: { unit: dl }
+Fläskfilé: { unit: g, aliases: [Fläskytterfilé] }
+Fryst pommes frites: { unit: g }
+Färsk dill: { unit: g }
+Färsk ingefära: { unit: dl }
+Färsk jäst: { unit: g }
+Färsk persilja: { unit: g }
+Färska lasagneplattor: { unit: st }
+Grekisk yoghurt: { unit: dl }
+Grädde: { unit: dl }
+Gräddfil: { unit: g }
+Gröna ärtor: { unit: dl }
+Grönsaker: { unit: g }
+Grönsaksbuljongtärningar: { unit: st }
+Gurka: { unit: st }
+HP-sås: { unit: dl }
+Japansk soja: { unit: dl }
+Kaffe: { unit: dl, aliases: [Kokt kaffe] }
+Kakao: { unit: dl }
+Ketchup: { unit: dl }
+Kronärtskockshjärtan: { unit: g }
+Kyckling: { unit: g, aliases: [Kycklingfilé, Kycklingbröstfilé] }
+Körsbärstomater: { unit: st }
+Köttfärs: { unit: g }
+Lime: { unit: st }
+Ljus soja: { unit: dl }
+Lövbiff: { unit: g }
+Minimozzarella: { unit: g }
+Oliver: { unit: dl }
+Olivolja: { unit: dl, gramsPerDl: 90, aliases: [Extra jungfru olivolja] }
+Ostronsås: { unit: dl }
+Panko: { unit: dl }
+Paprikapulver: { unit: dl }
+Parmesan: { unit: g }
+Pasta: { unit: g }
+Pinjenötter: { unit: dl }
+Piri piri: { unit: st }
+Potatis: { unit: st, gramsPerSt: 100, aliases: [Fast potatis, Kokt potatis] }
+Prosciutto: { unit: g }
+Rapsolja: { unit: dl, gramsPerDl: 90, aliases: [Neutral olja, Olja, Neutral olja till fritering] }
+Raw slaw: { unit: g }
+Ris: { unit: dl, aliases: [Jasminris, Basmatiris] }
+Riven kokos: { unit: dl }
+Rågmjöl: { unit: g }
+Röd chili: { unit: st }
+Rödlök: { unit: st }
+Salladslök: { unit: st }
+Salt: { staple: true, aliases: [Flingsalt] }
+Sambal oelek: { unit: dl }
+Smör: { unit: g, gramsPerDl: 90 }
+Socker: { unit: dl, aliases: [Strösocker] }
+Soltorkade tomater: { unit: g }
+Sparris: { unit: g }
+Ströbröd: { unit: dl }
+Surdegsgrund: { unit: g }
+Svart stenbitsrom: { unit: g }
+Svartpeppar: { staple: true }
+Söt soja: { unit: dl }
+Thaibasilika: { unit: g }
+Torkad oregano: { unit: dl, gramsPerDl: 20 }
+Torskrygg: { unit: g }
+Tzatziki: { unit: g }
+Vaniljsocker: { unit: dl }
+Vatten: { staple: true }
+Vetemjöl: { unit: g, gramsPerDl: 60 }
+Vitkål: { unit: g }
+Vitlöksklyftor: { unit: st, aliases: [Vitlöksklyfta] }
+Vitt vin: { unit: dl }
+Worcestershiresås: { unit: dl }
+Ägg: { unit: st }
