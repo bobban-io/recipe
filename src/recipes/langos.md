@@ -7,7 +7,7 @@ ingredients:
   - { name: Färsk jäst, grams: 25 }
   - { name: Kokt potatis, grams: 90, note: finriven }
   - { name: Vatten, grams: 300, note: ljummet }
-  - { name: Vetemjöl special, grams: 480, note: plus extra till utbakningen }
+  - { name: Vetemjöl, grams: 480, note: plus extra till utbakningen }
   - { name: Salt, grams: 6 }
   - { name: Neutral olja till fritering, grams: 900 }
   - { name: Vitlöksklyftor, amount: 4, unit: st, note: stora }

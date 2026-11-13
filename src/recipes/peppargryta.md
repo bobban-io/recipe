@@ -23,7 +23,7 @@ ingredients:
       - { name: HP-sås, amount: 1, unit: msk }
       - { name: Worcestershiresås, amount: 1, unit: krm }
       - { name: Collorit, amount: 1.5, unit: tsk, note: soja }
-      - { name: Sockerbitar, amount: 2, unit: st }
+      - { name: Strösocker, amount: 0.5, unit: msk }
 ---
 
 ## Gör så här
@@ -49,7 +49,7 @@ ingredients:
 
 6. **Gör såsen i samma panna.** Sänk värmen lite, häll i grädden och skrapa upp stekskyn
    från botten. Smula ner buljongtärningarna och rör ner chilisås, HP-sås,
-   worcestershiresås, Collorit, sockerbitarna och resten av svartpepparn. Låt koka upp.
+   worcestershiresås, Collorit, strösockret och resten av svartpepparn. Låt koka upp.
 
 7. **Låt puttra.** Lägg tillbaka köttet med köttsaften och låt allt puttra på svag värme i
    några minuter, tills köttet är genomstekt och såsen har tjocknat lite. Smaka av med
