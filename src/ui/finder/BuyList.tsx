@@ -49,7 +49,7 @@ export function BuyList({ shortfalls, missing, caption }: Props) {
                 <Text weight="bold" className="buy-slip-amount">
                   {formatBuyAmount(item.amount, item.unit)}
                 </Text>
-                <Text>
+                <Text className="buy-slip-name">
                   {item.ingredient}
                   {"have" in item && (
                     <Text size="2" color="gray">

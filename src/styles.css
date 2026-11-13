@@ -133,6 +133,13 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* Long names like Grönsaksbuljongtärningar break inside the slip instead of running past it. */
+.buy-slip-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .buy-list-toggle svg {
     transition: none;
