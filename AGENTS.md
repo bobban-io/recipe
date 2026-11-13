@@ -66,6 +66,9 @@ data as arguments, so `bun test` runs them without Vite:
 - `suggestions.ts` is the ingredient finder's engine. `suggest` ranks the recipes that use your
   on-hand ingredients and pass a category filter. `matchNeeds` compares any needs map with what
   you have, one recipe's or two recipes' added together.
+- `combos.ts` pairs suggestions into combos. `suggestCombos` takes `suggest`'s ranked suggestions
+  and gives at most three pairs that use more on-hand ingredients than any single suggestion, with
+  both recipes' needs added together.
 - `buyList.ts` formats buy-list amounts, with small volumes in msk, tsk or krm, and builds the
   copied text, one line per item.
 - `ingredientPicker.ts` holds the finder's picker rules. `pickableIngredients` gives the
