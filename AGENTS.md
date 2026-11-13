@@ -59,6 +59,11 @@ data as arguments, so `bun test` runs them without Vite:
   belongs to.
 - `needs.ts` converts lines to entry units. `recipeNeeds` gives a recipe's need for each
   ingredient at its default yield, without staples.
+- `suggestions.ts` is the ingredient finder's engine. `suggest` ranks the recipes that use your
+  on-hand ingredients and pass a category filter. `matchNeeds` compares any needs map with what
+  you have, one recipe's or two recipes' added together.
+- `buyList.ts` formats buy-list amounts, with small volumes in msk, tsk or krm, and builds the
+  copied text, one line per item.
 - `checks.ts` runs the build checks (`checkRecipes`) and loads checked recipes (`loadRecipes`).
 - `scale.ts` scales amounts to the chosen yield.
 - `categories.ts` holds the category filter's chips, in order: Alla, Vardagsmat, Helgmat, Bröd,
