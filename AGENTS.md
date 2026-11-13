@@ -12,9 +12,13 @@ When you're uncertain, or the scope is unclear - ask questions, don't guess.
 - **TanStack Start** (React) built with **Vite**, statically prerendered (SSG) — no server runtime.
 - **Radix UI Themes** (dark) for UI, plus a little CSS in `src/styles.css`.
 - File-based routing in `src/routes` (`__root.tsx`, `index.tsx`, `recipes/$slug.tsx`).
-- The home page keeps the chosen category chip in `src/ui/homeState.ts`, a module-level store
-  read with `useHomeState` (`useSyncExternalStore`). It survives opening a recipe and going back,
-  and a reload resets it. Keep it out of the URL and localStorage.
+- The home page has two tabs. Alla recept lists the recipes, and Vad har du hemma? is the
+  ingredient finder. The page's state lives in `src/ui/homeState.ts`, a module-level store read
+  with `useHomeState` (`useSyncExternalStore`). The store holds the tab, the category chip both
+  tabs share, and the finder's on-hand rows with each amount as typed. It survives opening a
+  recipe and going back, and a reload resets it. Keep it out of the URL and localStorage.
+- The finder's components are in `src/ui/finder/`. `RecipeTitle`, `StatusBadge`, `UsesLine` and
+  `BuyList` take their data and caption as props, so a combo card can reuse them unchanged.
 - Deployed to **GitHub Pages** at `recipe.bobban.io` via `.github/workflows/deploy.yml`
   (build output is `dist/client`; `public/CNAME` + `public/.nojekyll` ship with it).
 
@@ -64,6 +68,17 @@ data as arguments, so `bun test` runs them without Vite:
   you have, one recipe's or two recipes' added together.
 - `buyList.ts` formats buy-list amounts, with small volumes in msk, tsk or krm, and builds the
   copied text, one line per item.
+- `ingredientPicker.ts` holds the finder's picker rules. `pickableIngredients` gives the
+  ingredients some recipe uses, without staples. `ingredientOptions` matches the typed text
+  against names and aliases, ignoring case and diacritics, and returns at most eight options.
+  Names that start with the text come first, then aliases that start with it, then names and
+  then aliases that contain it.
+- `onHand.ts` holds the on-hand rows, which keep the amount text as typed. `parseAmount` takes a
+  comma or a dot and reads anything that isn't a positive number as no amount.
+  `onHandIngredients` turns the rows into `suggest`'s input.
+- `finderText.ts` builds the finder's sentences: names in running text ("kyckling, citron och
+  vitlöksklyftor"), a status badge's text and color, the yield line, "Använder …", the names
+  after "Att köpa" and the buy-list caption.
 - `checks.ts` runs the build checks (`checkRecipes`) and loads checked recipes (`loadRecipes`).
 - `scale.ts` scales amounts to the chosen yield.
 - `categories.ts` holds the category filter's chips, in order: Alla, Vardagsmat, Helgmat, Bröd,
