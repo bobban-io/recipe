@@ -17,8 +17,10 @@ When you're uncertain, or the scope is unclear - ask questions, don't guess.
   with `useHomeState` (`useSyncExternalStore`). The store holds the tab, the category chip both
   tabs share, and the finder's on-hand rows with each amount as typed. It survives opening a
   recipe and going back, and a reload resets it. Keep it out of the URL and localStorage.
-- The finder's components are in `src/ui/finder/`. `RecipeTitle`, `StatusBadge`, `UsesLine` and
-  `BuyList` take their data and caption as props, so a combo card can reuse them unchanged.
+- The finder's components are in `src/ui/finder/`. `FinderTab` shows a `SuggestionCard` for each
+  suggestion, then a `ComboCard` for each combo under "Två recept tillsammans". It leaves the
+  combo section out when no combo qualifies. Both cards use `RecipeTitle`, `StatusBadge`,
+  `UsesLine` and `BuyList`, which take their data and caption as props.
 - Deployed to **GitHub Pages** at `recipe.bobban.io` via `.github/workflows/deploy.yml`
   (build output is `dist/client`; `public/CNAME` + `public/.nojekyll` ship with it).
 
