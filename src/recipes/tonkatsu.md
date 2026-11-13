@@ -1,6 +1,8 @@
 ---
 title: Kycklingtonkatsu
 description: Frasig, pankopanerad kyckling på japanskt vis – med jasminris, krispig kålsallad med chili och lime och en söt och syrlig tonkatsusås.
+dishType: huvudrätt
+occasion: vardag
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4

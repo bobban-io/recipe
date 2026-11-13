@@ -1,6 +1,6 @@
 import { Badge, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import { Link } from "@tanstack/react-router";
-import type { Recipe } from "~/lib/recipes";
+import type { Recipe } from "~/lib/recipe";
 import { yieldUnitFor } from "~/lib/scale";
 
 export function RecipeCard({ recipe }: { recipe: Recipe }) {

@@ -1,6 +1,8 @@
 ---
 title: Torsk med brynt smör
 description: Saftig, lågtempererad torskrygg med örtvänd potatis och en nötig brynt smörsås med soja, citron, ärtor och dill.
+dishType: huvudrätt
+occasion: helg
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4

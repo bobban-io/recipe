@@ -1,6 +1,8 @@
 ---
 title: Öppen sparrislasagne
 description: Öppen lasagne med stekt sparris, krämig burrata och nötigt brynt smör – toppad med rostade pinjenötter och citronzest.
+dishType: huvudrätt
+occasion: helg
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4

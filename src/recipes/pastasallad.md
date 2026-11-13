@@ -1,6 +1,8 @@
 ---
 title: Italiensk pastasallad
 description: Krämig pastasallad med en röra på soltorkade tomater, mozzarella, oliver och kronärtskocka – toppad med prosciutto och hyvlad parmesan.
+dishType: huvudrätt
+occasion: vardag
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4

@@ -1,6 +1,7 @@
 ---
 title: Surdegsbröd
 description: Ett surdegsbröd med krispig skorpa och luftig, mjuk inkråm.
+dishType: bröd
 yieldUnit: limpa
 yieldUnitPlural: limpor
 defaultYield: 1

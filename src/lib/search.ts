@@ -1,4 +1,4 @@
-import type { Recipe } from "~/lib/recipes";
+import type { Recipe } from "~/lib/recipe";
 
 /** Lowercase and drop diacritics, so "langos" finds "Lángos" and "creme" finds "Crème". */
 function normalize(text: string): string {

@@ -1,6 +1,7 @@
 ---
 title: Kladdkaksmuffins
 description: Kladdiga chokladmuffins med kaffedoftande chokladglasyr och kokos – typ kladdkaka möter kärleksmums.
+dishType: bakverk
 yieldUnit: muffins
 defaultYield: 12
 ingredients:
@@ -20,7 +21,7 @@ ingredients:
       - { name: Kakao, amount: 3, unit: msk }
       - { name: Kokt kaffe, amount: 3, unit: msk }
       - { name: Vaniljsocker, amount: 2, unit: tsk }
-      - { name: Riven kokos, amount: 1, unit: dl, note: att toppa med }
+      - { name: Riven kokos, amount: 1, unit: dl, optional: true, note: att toppa med }
 ---
 
 ## Gör så här

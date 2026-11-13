@@ -1,6 +1,8 @@
 ---
 title: Lángos
 description: Ungerska friterade bröd penslade med vitlöksolja och toppade med gräddfil, rom och rödlök – krispiga, gyllene och godast när de är varma.
+dishType: huvudrätt
+occasion: helg
 yieldUnit: lángos
 defaultYield: 8
 ingredients:
@@ -15,7 +17,7 @@ ingredients:
   - { name: Rödlök, amount: 1, unit: st }
   - { name: Gräddfil, grams: 300 }
   - { name: Svart stenbitsrom, grams: 100 }
-  - { name: Färsk dill, grams: 5, note: "plockad, till garnering" }
+  - { name: Färsk dill, grams: 5, optional: true, note: "plockad, till garnering" }
 ---
 
 ## Gör så här

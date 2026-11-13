@@ -1,6 +1,8 @@
 ---
 title: Yakiniku
 description: Snabbstekt lövbiff glaserad i soja, honung, vitlök och ingefära – med basmatiris och en syrlig vitkålssallad med lime.
+dishType: huvudrätt
+occasion: vardag
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 2

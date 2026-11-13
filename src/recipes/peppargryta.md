@@ -1,6 +1,8 @@
 ---
 title: Peppargryta
 description: Krämig peppargryta på fläskytterfilé med en söt och lite syrlig ton av chilisås och HP-sås – med krispig hasselbackspotatis.
+dishType: huvudrätt
+occasion: vardag
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4

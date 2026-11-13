@@ -1,17 +1,17 @@
-import type { Ingredient, IngredientSection, Recipe, Unit } from "~/lib/recipes";
+import type { IngredientLine, IngredientSection, Recipe, Unit } from "~/lib/recipe";
 
 export type ScaledIngredient = { name: string; amount: number; unit: "g" | Unit; note?: string };
 export type ScaledSection = { title?: string; ingredients: ScaledIngredient[] };
 
 /** Sum of the absolute gram weights of every ingredient flagged as flour. */
-export function totalFlourGrams(ingredients: Ingredient[]): number {
+export function totalFlourGrams(ingredients: IngredientLine[]): number {
   return ingredients
     .filter((ingredient) => ingredient.flour && ingredient.grams != null)
     .reduce((sum, ingredient) => sum + (ingredient.grams ?? 0), 0);
 }
 
 /** Grams for a single base yield: absolute amount, or percent of total flour. */
-function baseGrams(ingredient: Ingredient, totalFlour: number): number {
+function baseGrams(ingredient: IngredientLine, totalFlour: number): number {
   if (ingredient.grams != null) return ingredient.grams;
   if (ingredient.percent != null) return (ingredient.percent / 100) * totalFlour;
   return 0;
@@ -51,7 +51,7 @@ function scaleUnitAmount(amount: number, unit: Unit, factor: number): { amount: 
   return { amount: roundToQuarter(value), unit: VOLUME_ML[index][0] };
 }
 
-function scaleIngredient(ingredient: Ingredient, totalFlour: number, factor: number): ScaledIngredient {
+function scaleIngredient(ingredient: IngredientLine, totalFlour: number, factor: number): ScaledIngredient {
   const { name, note } = ingredient;
   if (ingredient.amount != null && ingredient.unit != null) {
     return { name, note, ...scaleUnitAmount(ingredient.amount, ingredient.unit, factor) };

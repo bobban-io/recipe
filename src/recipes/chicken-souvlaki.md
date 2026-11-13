@@ -1,6 +1,8 @@
 ---
 title: Kycklingsouvlaki
 description: Klassiska grekiska kycklingspett marinerade i citron, yoghurt och oregano – med gyllene pommes, fetaost och tzatziki.
+dishType: huvudrätt
+occasion: helg
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 6
@@ -20,7 +22,7 @@ ingredients:
   - { name: Olja, grams: 25, note: "till att steka spetten" }
   - { name: Fetaost, grams: 200 }
   - { name: Tzatziki, grams: 500 }
-  - { name: Grönsaker, grams: 300, note: "valfria, skivade – t.ex. tomat, gurka och rödlök" }
+  - { name: Grönsaker, grams: 300, optional: true, note: "valfria, skivade – t.ex. tomat, gurka och rödlök" }
 ---
 
 ## Gör så här

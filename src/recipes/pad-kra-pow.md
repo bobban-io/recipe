@@ -1,6 +1,8 @@
 ---
 title: Pad kra pow
 description: Snabb thailändsk wok med köttfärs, massor av vitlök, piri piri och thaibasilika i en salt-söt sås – middag på en kvart.
+dishType: huvudrätt
+occasion: vardag
 yieldUnit: portion
 yieldUnitPlural: portioner
 defaultYield: 4
