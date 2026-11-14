@@ -1,6 +1,8 @@
 # The ingredient catalog: every ingredient line's name in src/recipes/*.md is an ingredient
 # here or one of its aliases. One line per ingredient, in Swedish alphabetical order.
 # See "Ingredient catalog" in AGENTS.md.
+Bakpulver: { unit: dl }
+Banan: { unit: st }
 Basilikablad: { unit: st }
 Burrata: { unit: st }
 Chilisås: { unit: dl }
@@ -25,6 +27,7 @@ Gröna ärtor: { unit: dl }
 Grönsaker: { unit: g }
 Grönsaksbuljongtärningar: { unit: st }
 Gurka: { unit: st }
+Havregryn: { unit: dl }
 HP-sås: { unit: dl }
 Japansk soja: { unit: dl }
 Kaffe: { unit: dl, aliases: [Kokt kaffe] }
@@ -72,6 +75,7 @@ Thaibasilika: { unit: g }
 Torkad oregano: { unit: dl, gramsPerDl: 20 }
 Torskrygg: { unit: g }
 Tzatziki: { unit: g }
+Vaniljpulver: { unit: dl }
 Vaniljsocker: { unit: dl }
 Vatten: { staple: true }
 Vetemjöl: { unit: g, gramsPerDl: 60 }
