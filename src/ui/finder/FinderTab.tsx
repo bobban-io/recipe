@@ -10,6 +10,7 @@ import { ComboCard } from "~/ui/finder/ComboCard";
 import { IngredientPicker } from "~/ui/finder/IngredientPicker";
 import { OnHandRows } from "~/ui/finder/OnHandRows";
 import { SuggestionCard } from "~/ui/finder/SuggestionCard";
+import { useHomeSearchParam } from "~/ui/homeSearch";
 import { addOnHand, removeOnHand, setOnHandAmount, updateHomeState, useHomeState } from "~/ui/homeState";
 
 const recipes = getAllRecipes();
@@ -28,13 +29,20 @@ function unitOf(ingredient: string) {
  */
 export function FinderTab() {
   const { onHand: rows, categoryFilter } = useHomeState();
+  const [pickerQuery, setPickerQuery] = useHomeSearchParam("ingrediens");
   const onHand = onHandIngredients(rows);
   const suggestions = suggest(recipes, catalog, onHand, passesFilter(categoryFilter));
   const combos = suggestCombos(suggestions, onHand);
 
   return (
     <>
-      <IngredientPicker pickable={pickable} added={new Set(rows.map((row) => row.ingredient))} onAdd={addOnHand} />
+      <IngredientPicker
+        pickable={pickable}
+        added={new Set(rows.map((row) => row.ingredient))}
+        query={pickerQuery}
+        onQueryChange={setPickerQuery}
+        onAdd={addOnHand}
+      />
       <OnHandRows
         rows={rows}
         unitOf={unitOf}

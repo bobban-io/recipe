@@ -17,6 +17,10 @@ When you're uncertain, or the scope is unclear - ask questions, don't guess.
   with `useHomeState` (`useSyncExternalStore`). The store holds the tab, the category chip both
   tabs share, and the finder's on-hand rows with each amount as typed. It survives opening a
   recipe and going back, and a reload resets it. Keep it out of the URL and localStorage.
+- The text in the two search fields lives in the URL instead: `?q=` for the recipe search and
+  `?ingrediens=` for the finder's ingredient picker. `useHomeSearchParam` in `src/ui/homeSearch.ts`
+  reads it from the browser's location, so a controlled field updates as you type, and writes it
+  with `replace`, so typing adds no history entries.
 - The finder's components are in `src/ui/finder/`. `FinderTab` shows a `SuggestionCard` for each
   suggestion, then a `ComboCard` for each combo under "Två recept tillsammans". It leaves the
   combo section out when no combo qualifies. Both cards use `RecipeTitle`, `StatusBadge`,

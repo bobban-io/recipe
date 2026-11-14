@@ -8,6 +8,9 @@ type Props = {
   pickable: readonly PickableIngredient[];
   /** Ingredients already added, which aren't offered again. */
   added: ReadonlySet<string>;
+  /** The field's text. */
+  query: string;
+  onQueryChange: (next: string) => void;
   onAdd: (ingredient: string) => void;
 };
 
@@ -16,8 +19,7 @@ type Props = {
  * Arrow keys move the highlight, Enter adds the highlighted option, Escape clears the field, and a
  * click adds an option.
  */
-export function IngredientPicker({ pickable, added, onAdd }: Props) {
-  const [query, setQuery] = useState("");
+export function IngredientPicker({ pickable, added, query, onQueryChange, onAdd }: Props) {
   const [highlighted, setHighlighted] = useState(0);
   const [focused, setFocused] = useState(false);
   const id = useId();
@@ -31,7 +33,7 @@ export function IngredientPicker({ pickable, added, onAdd }: Props) {
   const active = Math.min(highlighted, options.length - 1);
 
   function type(next: string) {
-    setQuery(next);
+    onQueryChange(next);
     setHighlighted(0);
   }
 

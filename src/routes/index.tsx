@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { Flex, Grid, Heading, SegmentedControl, Section, Text } from "@radix-ui/themes";
 import { filtersToShow, passesFilter, type CategoryFilter } from "~/lib/categories";
@@ -6,11 +5,13 @@ import { getAllRecipes } from "~/lib/recipes";
 import { searchRecipes } from "~/lib/search";
 import { CategoryChips } from "~/ui/CategoryChips";
 import { FinderTab } from "~/ui/finder/FinderTab";
+import { useHomeSearchParam, validateHomeSearch } from "~/ui/homeSearch";
 import { updateHomeState, useHomeState, type HomeTab } from "~/ui/homeState";
 import { RecipeCard } from "~/ui/RecipeCard";
 import { RecipeSearch } from "~/ui/RecipeSearch";
 
 export const Route = createFileRoute("/")({
+  validateSearch: validateHomeSearch,
   component: Home,
 });
 
@@ -21,8 +22,7 @@ const INTRO: Record<HomeTab, string> = {
 
 function Home() {
   const { tab } = useHomeState();
-  // Here rather than in the list, so the search survives switching tabs.
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useHomeSearchParam("q");
 
   return (
     <Section>
