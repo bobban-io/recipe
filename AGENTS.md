@@ -34,7 +34,9 @@ Scripts: `bun run dev`, `bun run build`, `bun run preview`, `bun run typecheck`,
 
 Recipes are plain markdown files in `src/recipes/`, written in casual Swedish (the UI is Swedish too). **To add one, drop a new `.md` file there** —
 it is picked up automatically (the home page and prerendering discover it). Every ingredient line's name must be in
-the ingredient catalog (see below), so a recipe with a new name needs a catalog entry too. Structure:
+the ingredient catalog (see below), so a recipe with a new name needs a catalog entry too. To add or change a
+recipe, follow `.claude/skills/write-recipe/SKILL.md`: it covers the recipes' voice, where the site shows each
+field, and pushing recipe-only changes straight to main. Structure:
 
 - **YAML frontmatter** holds the scalable data: `title`, `description`, `dishType`, `occasion`,
   `yieldUnit` (e.g. `limpa` or `portion`), `yieldUnitPlural` (e.g. `limpor`; omit when the
