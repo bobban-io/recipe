@@ -54,7 +54,7 @@ export function FinderTab() {
         filters={filtersToShow(recipes)}
         value={categoryFilter}
         onChange={(next) => updateHomeState({ categoryFilter: next })}
-        mt="5"
+        mt="3"
         mb="5"
       />
 

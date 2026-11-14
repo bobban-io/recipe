@@ -15,6 +15,8 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
+const TABS: readonly HomeTab[] = ["recipes", "finder"];
+
 const INTRO: Record<HomeTab, string> = {
   recipes: "Välj ett recept och hur mycket du vill göra, så räknas mängderna om automatiskt.",
   finder: "Lägg till det du har hemma, så föreslår vi recept som använder det.",
@@ -28,7 +30,14 @@ function Home() {
     <Section>
       <Flex direction="column" gap="2" mb="5">
         <Heading size="7">Recept</Heading>
-        <Text color="gray">{INTRO[tab]}</Text>
+        {/* Both intros share one cell, so the taller sets its height and switching tabs moves nothing below. */}
+        <div className="home-intro">
+          {TABS.map((each) => (
+            <Text key={each} color="gray" style={each === tab ? undefined : { visibility: "hidden" }}>
+              {INTRO[each]}
+            </Text>
+          ))}
+        </div>
       </Flex>
 
       <SegmentedControl.Root
