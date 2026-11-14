@@ -18,9 +18,10 @@ Fryst pommes frites: { unit: g }
 Färsk dill: { unit: g }
 Färsk ingefära: { unit: dl }
 Färsk jäst: { unit: g }
-Färsk persilja: { unit: g }
+Färsk persilja: { unit: g, gramsPerDl: 25 }
 Färska lasagneplattor: { unit: st }
 Grekisk yoghurt: { unit: dl }
+Gruyère: { unit: dl }
 Grädde: { unit: dl }
 Gräddfil: { unit: g }
 Gröna ärtor: { unit: dl }
@@ -34,6 +35,7 @@ Kaffe: { unit: dl, aliases: [Kokt kaffe] }
 Kakao: { unit: dl }
 Ketchup: { unit: dl }
 Kronärtskockshjärtan: { unit: g }
+Krukbasilika: { unit: st }
 Kyckling: { unit: g, aliases: [Kycklingfilé, Kycklingbröstfilé] }
 Körsbärstomater: { unit: st }
 Köttfärs: { unit: g }
@@ -46,12 +48,12 @@ Olivolja: { unit: dl, gramsPerDl: 90, aliases: [Extra jungfru olivolja] }
 Ostronsås: { unit: dl }
 Panko: { unit: dl }
 Paprikapulver: { unit: dl }
-Parmesan: { unit: g }
+Parmesan: { unit: g, gramsPerDl: 40 }
 Pasta: { unit: g }
-Pinjenötter: { unit: dl }
+Pinjenötter: { unit: dl, gramsPerDl: 55 }
 Piri piri: { unit: st }
 Potatis: { unit: st, gramsPerSt: 100, aliases: [Fast potatis, Kokt potatis] }
-Prosciutto: { unit: g }
+Prosciutto: { unit: g, aliases: [Jamón serrano] }
 Rapsolja: { unit: dl, gramsPerDl: 90, aliases: [Neutral olja, Olja, Neutral olja till fritering] }
 Raw slaw: { unit: g }
 Ris: { unit: dl, aliases: [Jasminris, Basmatiris] }
@@ -75,6 +77,7 @@ Thaibasilika: { unit: g }
 Torkad oregano: { unit: dl, gramsPerDl: 20 }
 Torskrygg: { unit: g }
 Tzatziki: { unit: g }
+Valnötter: { unit: dl }
 Vaniljpulver: { unit: dl }
 Vaniljsocker: { unit: dl }
 Vatten: { staple: true }
